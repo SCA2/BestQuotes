@@ -1,7 +1,7 @@
 class QuotesController < Rulers::Controller
   def a_quote
-    "To be or not to be, that is the question." +
-    "\n<pre>\n#{env}\n</pre>"
+    @gateway = env["GATEWAY_INTERFACE"]
+    render :a_quote, :noun => :winking
   end
 
   def exception
